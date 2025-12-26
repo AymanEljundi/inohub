@@ -43,7 +43,7 @@ export default function Home() {
       </section>
 
       {/* Service Categories - Catalog Entry */}
-      <section className="relative z-10 py-32 bg-white">
+      <section className="relative z-10 py-16 bg-white">
         {/* Visual Continuity Bridge */}
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-gray-50 to-transparent" />
 
@@ -72,7 +72,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════════════════
           EXTERNAL SYSTEM BOUNDARY - Product Store (Outside Innovation Hub)
           ═══════════════════════════════════════════════════════════════════════ */}
-      <section className="relative z-20 py-32 bg-gray-100 border-y-4 border-dashed border-gray-300">
+      <section className="relative z-20 py-20 bg-gray-100 border-y-4 border-dashed border-gray-300">
         {/* Visual Exit/Entry Points */}
         <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-4 h-2 bg-white border-x border-b border-gray-300" />
 
@@ -142,7 +142,7 @@ export default function Home() {
       </section>
 
       {/* Trust Signals - Back in main system path */}
-      <section className="relative z-10 py-32 bg-white">
+      <section className="relative z-10 py-20 bg-white">
         {/* Visual Continuity Lead-in */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-gray-300 to-transparent" />
 

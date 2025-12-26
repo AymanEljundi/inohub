@@ -9,13 +9,21 @@ export const metadata = {
 export default function AcademyPage() {
     return (
         <div className="min-h-screen bg-[#F8F9FA]">
-            <div className="bg-blue-900 text-white py-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-blue-400/30 bg-blue-800/50 text-blue-200 text-sm font-medium mb-6">
+            <div className="relative bg-blue-900 text-white py-24 overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <img
+                        src="/images/academy-hero.jpg"
+                        alt="Academy Workshop"
+                        className="w-full h-full object-cover opacity-20"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-blue-900/90 to-blue-900/95"></div>
+                </div>
+                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-blue-400/30 bg-blue-800/50 text-blue-200 text-sm font-medium mb-6 backdrop-blur-sm">
                         <BookOpen className="h-4 w-4 mr-2" />
                         Professional Certification
                     </span>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6">Master the Infrastructure</h1>
+                    <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Master the Infrastructure</h1>
                     <p className="text-xl text-blue-200 max-w-2xl mx-auto">
                         Join the elite network of TechStore Certified Installers.
                         Get hands-on training on the latest photovoltaic, EV, and security systems.

@@ -1,5 +1,6 @@
 import { programs } from "@/data/academy";
 import Link from "next/link";
+import Image from "next/image";
 import { Clock, Users, ArrowRight, Award, Video, GraduationCap, Gauge } from "lucide-react";
 
 export function AcademyCatalog() {
@@ -8,10 +9,15 @@ export function AcademyCatalog() {
             {programs.map(prog => (
                 <Link key={prog.id} href={`/academy/programs/${prog.id}`} className="block group">
                     <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                        <div className="bg-gray-100 h-48 relative flex items-center justify-center">
-                            {/* Placeholder */}
-                            <GraduationCap className="h-16 w-16 text-gray-300" />
-                            <div className="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-blue-800 uppercase backdrop-blur-sm">
+                        <div className="relative h-48 bg-gray-200">
+                            <Image
+                                src={prog.image}
+                                alt={prog.title}
+                                fill
+                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
+                            <div className="absolute top-4 left-4 bg-white/95 px-3 py-1 rounded-full text-xs font-bold text-blue-800 uppercase backdrop-blur-sm shadow-sm z-10">
                                 {prog.track}
                             </div>
                         </div>

@@ -149,8 +149,8 @@ export function SystemFlowVisualization() {
                                         </h3>
 
                                         {/* Description */}
-                                        <p className="text-gray-500 leading-relaxed text-sm">
-                                            {step.description}
+                                        <p className="text-sm text-gray-500 mt-1">
+                                            Real-time tracking of your efficiency&apos;s impact.
                                         </p>
 
                                         {/* Active Status Indicator */}
@@ -183,7 +183,7 @@ export function SystemFlowVisualization() {
                         Initiate New Project
                         <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                     </a>
-                    <p className="mt-4 text-sm text-gray-400 font-medium">Ready to deploy your first service? Let's begin.</p>
+                    <p className="mt-4 text-sm text-gray-400 font-medium">Ready to deploy your first service? Let&apos;s begin.</p>
                 </div>
             </div>
         </section>

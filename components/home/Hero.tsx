@@ -1,7 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, Lightbulb, Activity, Zap, Shield } from "lucide-react";
+import { useConsultation } from "@/components/consultation/ConsultationContext";
 
 export function Hero() {
+    const { openModal } = useConsultation();
+
     return (
         <div className="relative bg-[#0B0F19] overflow-hidden">
             {/* Tech Grid Background */}
@@ -12,7 +17,7 @@ export function Hero() {
             <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-blue-500/20 to-transparent delay-700"></div>
 
             <div className="max-w-7xl mx-auto">
-                <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 pt-28 px-4 sm:px-6 lg:px-8">
+                <div className="relative z-10 pb-8 sm:pb-12 md:pb-16 lg:max-w-2xl lg:w-full lg:pb-20 xl:pb-24 pt-20 px-4 sm:px-6 lg:px-8">
 
                     {/* Status Badges */}
                     <div className="flex gap-2 mb-8 flex-wrap">
@@ -27,21 +32,21 @@ export function Hero() {
                     </div>
 
                     <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
-                        <span className="block">Infrastructure for</span>
-                        <span className="block text-primary">The Next Generation</span>
+                        <span className="block">Deploy Enterprise</span>
+                        <span className="block text-primary">Solar & EV Infrastructure</span>
                     </h1>
                     <p className="mt-3 text-base text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl md:mt-5 md:text-xl">
-                        We don&apos;t just sell tech; we deploy it. Join Lebanon&apos;s largest network of solar arrays, smart security, and EV charging stations.
+                        Turn your facilities into a revenue engine. We design, fund, and deploy advanced energy and security networks—so you can focus on innovation.
                     </p>
 
                     <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                        <Link
-                            href="/services"
-                            className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-primary hover:bg-red-700 md:py-4 md:text-lg transition-all shadow-lg hover:shadow-red-900/20"
+                        <button
+                            onClick={openModal}
+                            className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-primary hover:bg-red-700 md:py-4 md:text-lg transition-all shadow-lg hover:shadow-red-900/20 cursor-pointer"
                         >
                             Explore Services
                             <ArrowRight className="ml-2 h-5 w-5" />
-                        </Link>
+                        </button>
                         <Link
                             href="/innovation"
                             className="inline-flex items-center justify-center px-8 py-3 border border-gray-700 text-base font-medium rounded-lg text-white bg-gray-800/50 hover:bg-gray-700 backdrop-blur-sm md:py-4 md:text-lg transition-all"

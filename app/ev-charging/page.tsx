@@ -2,8 +2,20 @@
 
 import { stations as allStations, StationStatus } from "@/lib/evcharging/mockStations";
 import { StationCard } from "@/components/ev/StationCard";
-import { GoogleMapView } from "@/components/maps/GoogleMapView";
+import { useRouter } from "next/navigation";
+
+import dynamic from "next/dynamic";
 import { Zap, Search } from "lucide-react";
+
+// Dynamic import for Leaflet to avoid SSR window error
+const LeafletMapView = dynamic(() => import("@/components/maps/LeafletMapView").then(mod => mod.LeafletMapView), {
+    ssr: false,
+    loading: () => (
+        <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+        </div>
+    )
+});
 import { useState, useMemo } from "react";
 import { DeploymentHeatmap } from "@/components/shared/DeploymentHeatmap"; // Will create next
 
@@ -20,9 +32,12 @@ export default function EVChargingPage() {
         });
     }, [selectedCity, selectedStatus]);
 
+    const router = useRouter();
+
     const handleStationSelect = (id: string | null) => {
-        setSelectedStationId(id);
-        // Optional: scroll into view
+        if (id) {
+            router.push(`/ev-charging/stations/${id}`);
+        }
     };
 
     return (
@@ -40,7 +55,7 @@ export default function EVChargingPage() {
                         <select
                             aria-label="Filter by City"
                             value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}
-                            className="w-full p-2 bg-gray-50 border border-gray-200 rounded-lg text-sm"
+                            className="w-full p-2 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-900"
                         >
                             <option value="All">All Cities</option>
                             <option value="Beirut">Beirut</option>
@@ -51,7 +66,7 @@ export default function EVChargingPage() {
                         <select
                             aria-label="Filter by Status"
                             value={selectedStatus} onChange={(e) => setSelectedStatus(e.target.value as StationStatus | 'All')}
-                            className="w-full p-2 bg-gray-50 border border-gray-200 rounded-lg text-sm"
+                            className="w-full p-2 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-900"
                         >
                             <option value="All">Any Status</option>
                             <option value="Online">Online Only</option>
@@ -87,7 +102,7 @@ export default function EVChargingPage() {
 
             {/* Map View */}
             <div className="flex-1 relative bg-gray-100">
-                <GoogleMapView
+                <LeafletMapView
                     stations={filteredStations}
                     onStationSelect={handleStationSelect}
                     selectedStationId={selectedStationId}

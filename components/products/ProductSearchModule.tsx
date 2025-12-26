@@ -46,7 +46,7 @@ export function ProductSearchModule({ compact = false }: { compact?: boolean }) 
                         <select
                             value={category}
                             onChange={(e) => setCategory(e.target.value)}
-                            className="w-full appearance-none bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded-lg outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary font-medium"
+                            className="w-full appearance-none bg-gray-50 border border-gray-200 text-gray-900 py-3 px-4 pr-8 rounded-lg outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary font-medium"
                             aria-label="Select Category"
                         >
                             {PRODUCT_CATEGORIES.map(cat => (

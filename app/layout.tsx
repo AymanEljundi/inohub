@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { ConsultationProvider } from "@/components/consultation/ConsultationContext";
+import { StickyCTABar } from "@/components/layout/StickyCTABar";
+import { ChatWidget } from "@/components/chat/ChatWidget";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,11 +33,15 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col font-sans`}
         suppressHydrationWarning
       >
-        <Navbar />
-        <main className="flex-grow bg-[#F8F9FA]">
-          {children}
-        </main>
-        <Footer />
+        <ConsultationProvider>
+          <Navbar />
+          <main className="flex-grow bg-[#F8F9FA]">
+            {children}
+          </main>
+          <StickyCTABar />
+          <ChatWidget />
+          <Footer />
+        </ConsultationProvider>
       </body>
     </html>
   );

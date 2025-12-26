@@ -81,7 +81,7 @@ export function AvailabilityModule({ service }: { service: Service }) {
                             <select
                                 aria-label="Select Target Location"
                                 value={location} onChange={(e) => setLocation(e.target.value)}
-                                className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none"
+                                className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-900 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none"
                             >
                                 {CITIES.map(c => <option key={c} value={c}>{c}</option>)}
                             </select>

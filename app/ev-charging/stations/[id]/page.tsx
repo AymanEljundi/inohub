@@ -35,9 +35,14 @@ export default function StationDetailPage() {
                 <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                     {/* Hero Image */}
                     <div className="relative h-64 bg-gray-200">
-                        <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                            {/* Placeholder Image Logic */}
-                            <span className="text-sm">Station Image: {station.name}</span>
+                        <div className="absolute inset-0">
+                            <Image
+                                src="/images/ev-station-default.jpg"
+                                alt={station.name}
+                                fill
+                                className="object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent"></div>
                         </div>
                     </div>
 

@@ -13,18 +13,19 @@ export function SystemThread() {
     const [viewportHeight, setViewportHeight] = useState(0);
 
     useEffect(() => {
-        setViewportHeight(window.innerHeight);
+        const handleResize = () => setViewportHeight(window.innerHeight);
         const handleScroll = () => {
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
             const progress = docHeight > 0 ? window.scrollY / docHeight : 0;
             setScrollProgress(Math.min(progress, 1));
         };
 
-        const handleResize = () => setViewportHeight(window.innerHeight);
-
         window.addEventListener("scroll", handleScroll, { passive: true });
         window.addEventListener("resize", handleResize);
-        handleScroll(); // Initial check
+
+        // Initial checks
+        handleResize();
+        handleScroll();
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
