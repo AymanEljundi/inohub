@@ -1,0 +1,81 @@
+"use client";
+
+import { useState } from "react";
+import { Loader2, CheckCircle2 } from "lucide-react";
+
+export function PartnerForm() {
+    const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus('submitting');
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        setStatus('success');
+    };
+
+    if (status === 'success') {
+        return (
+            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-12 text-center">
+                <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 className="h-10 w-10" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Registration Received</h3>
+                <p className="text-gray-500 max-w-md mx-auto mb-8">
+                    Our network planning team will review your location details. If your area qualifies for expansion, we will contact you within 5 business days.
+                </p>
+                <button
+                    onClick={() => setStatus('idle')}
+                    className="text-primary font-semibold hover:underline"
+                >
+                    Register another location
+                </button>
+            </div>
+        );
+    }
+
+    return (
+        <div id="register" className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+            <div className="bg-blue-900 px-8 py-6">
+                <h3 className="text-xl font-bold text-white">Join the Network</h3>
+                <p className="text-blue-200 text-sm mt-1">Submit your location for evaluation.</p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="p-8 space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label htmlFor="orgName" className="block text-sm font-bold text-gray-900 mb-2">Organization / Name</label>
+                        <input id="orgName" type="text" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none placeholder:text-gray-400" placeholder="e.g. Jounieh Municipality" />
+                    </div>
+                    <div>
+                        <label htmlFor="email" className="block text-sm font-bold text-gray-900 mb-2">Contact Email</label>
+                        <input id="email" type="email" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none placeholder:text-gray-400" placeholder="mayor@jounieh.gov.lb" />
+                    </div>
+                </div>
+
+                <div>
+                    <label htmlFor="propertyType" className="block text-sm font-bold text-gray-900 mb-2">Property Type</label>
+                    <select id="propertyType" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                        <option>Municipal Land / Public Space</option>
+                        <option>Commercial Rooftop (Solar)</option>
+                        <option>Residential Complex</option>
+                        <option>Industrial Facility</option>
+                        <option>Telecommunications Tower</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label htmlFor="locationDetails" className="block text-sm font-bold text-gray-900 mb-2">Location Details</label>
+                    <textarea id="locationDetails" required rows={3} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none resize-none placeholder:text-gray-400" placeholder="Address, Plot Number, or Coordinates..."></textarea>
+                </div>
+
+                <button
+                    type="submit"
+                    disabled={status === 'submitting'}
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-lg transition-colors flex items-center justify-center disabled:opacity-70"
+                >
+                    {status === 'submitting' ? <Loader2 className="animate-spin h-5 w-5" /> : 'Submit for Evaluation'}
+                </button>
+            </form>
+        </div>
+    );
+}
