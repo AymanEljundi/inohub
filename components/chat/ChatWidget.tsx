@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { MessageSquare, X, Send, Minus } from "lucide-react";
+import { MessageSquare, Send, Minus } from "lucide-react";
 
 export function ChatWidget() {
     const [isOpen, setIsOpen] = useState(false);

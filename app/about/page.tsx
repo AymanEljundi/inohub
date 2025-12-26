@@ -16,7 +16,7 @@ export default function AboutPage() {
                         Building the Infrastructure of Tomorrow
                     </p>
                     <p className="mt-6 text-lg leading-8 text-gray-600">
-                        TechStore Innovation Hub is dedicated to accelerating Lebanon's transition to smart, sustainable technology. From EV networks to solar arrays, we deploy the systems that power progress.
+                        TechStore Innovation Hub is dedicated to accelerating Lebanon&apos;s transition to smart, sustainable technology. From EV networks to solar arrays, we deploy the systems that power progress.
                     </p>
                 </div>
                 <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">

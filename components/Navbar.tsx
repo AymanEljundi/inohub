@@ -2,20 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Rocket, Menu, X, ChevronDown, ExternalLink, Search } from "lucide-react";
+import { Menu, ChevronDown, Search } from "lucide-react";
 import { useState } from "react";
 
 export function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-
-    const toggleDropdown = (name: string) => {
-        if (openDropdown === name) {
-            setOpenDropdown(null);
-        } else {
-            setOpenDropdown(name);
-        }
-    };
 
     return (
         <div className="sticky top-0 z-50">

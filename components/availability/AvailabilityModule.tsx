@@ -3,7 +3,7 @@
 import { Service } from "@/data/services";
 import { useState } from "react";
 import { checkAvailability, CITIES, AvailabilityResponse } from "@/lib/availability/checkAvailability";
-import { MapPin, Info, ArrowRight, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { MapPin, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 
 export function AvailabilityModule({ service }: { service: Service }) {
     const isHybrid = service.availabilityType === 'Hybrid';

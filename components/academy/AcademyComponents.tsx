@@ -1,7 +1,7 @@
 import { programs } from "@/data/academy";
 import Link from "next/link";
 import Image from "next/image";
-import { Clock, Users, ArrowRight, Award, Video, GraduationCap, Gauge } from "lucide-react";
+import { Clock, Users, ArrowRight, Award, Video, Gauge } from "lucide-react";
 
 export function AcademyCatalog() {
     return (
