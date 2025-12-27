@@ -1,10 +1,18 @@
-"use client";
-
 import { services } from "@/data/services";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Zap, Server, Shield, Globe } from "lucide-react";
 import { ROICalculator } from "@/components/calculator/ROICalculator";
+
+export const metadata = {
+    title: "Enterprise Services | TechStore Innovation Hub",
+    description: "Turnkey infrastructure solutions: Solar, Connectivity, Security, and IT. Zero downtime engineering for Lebanon's critical sectors.",
+    openGraph: {
+        title: "Enterprise Services | TechStore",
+        description: "Zero Downtime. Engineered for Resilience. Solar, Fiber, and Security.",
+        images: ["/og-services.png"]
+    }
+};
 
 export default function ServicesIndex() {
     return (
@@ -45,9 +53,9 @@ export default function ServicesIndex() {
             <div className="py-24 bg-gray-50">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto max-w-2xl lg:text-center">
-                        <h2 className="text-base font-semibold leading-7 text-primary">Reliability First</h2>
+                        <h2 className="text-base font-semibold leading-7 text-primary">Zero Downtime</h2>
                         <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                            Infrastructure you can trust.
+                            Engineered for Resilience.
                         </p>
                     </div>
                     <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">

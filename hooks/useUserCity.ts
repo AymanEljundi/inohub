@@ -42,7 +42,7 @@ export function useUserCity(): CityData {
                     isLoading: false,
                     error: null,
                 });
-            } catch (err) {
+            } catch {
                 setData({
                     city: "Lebanon",
                     country: "Lebanon",

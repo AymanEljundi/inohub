@@ -1,7 +1,16 @@
-"use client";
 import { ProductSearchModule } from "@/components/products/ProductSearchModule";
 import { ExternalCategoryGrid } from "@/components/products/ExternalCategoryGrid";
 import { ShoppingBag, ArrowRight, ShieldCheck, Truck } from "lucide-react";
+
+export const metadata = {
+    title: "Product Finder | TechStore Innovation Hub",
+    description: "Official retail channel for premium hardware. Certified supply chain for servers, sensors, and networking equipment.",
+    openGraph: {
+        title: "Product Finder | TechStore",
+        description: "Premium Hardware, Verified Quality. Sourced directly from manufacturers.",
+        images: ["/og-products.png"]
+    }
+};
 
 export default function ProductFinderPage() {
     return (
@@ -43,21 +52,21 @@ export default function ProductFinderPage() {
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                         <div className="flex flex-col items-center">
-                            <div className="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mb-4">
+                            <div className="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center mb-4">
                                 <ShieldCheck className="w-6 h-6" />
                             </div>
-                            <h3 className="font-bold text-gray-900">100% Genuine</h3>
+                            <h3 className="font-bold text-gray-900">Certified Supply Chain</h3>
                             <p className="text-sm text-gray-500">Sourced directly from manufacturers.</p>
                         </div>
                         <div className="flex flex-col items-center">
                             <div className="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center mb-4">
                                 <Truck className="w-6 h-6" />
                             </div>
-                            <h3 className="font-bold text-gray-900">Fast Delivery</h3>
-                            <p className="text-sm text-gray-500">24-48 hour delivery across Lebanon.</p>
+                            <h3 className="font-bold text-gray-900">Fast Deployment</h3>
+                            <p className="text-sm text-gray-500">24-48 hour logistics across Lebanon.</p>
                         </div>
                         <div className="flex flex-col items-center">
-                            <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4">
+                            <div className="w-12 h-12 bg-gray-100 text-gray-600 rounded-full flex items-center justify-center mb-4">
                                 <ShieldCheck className="w-6 h-6" />
                             </div>
                             <h3 className="font-bold text-gray-900">Warranty Support</h3>

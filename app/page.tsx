@@ -97,9 +97,7 @@ export default function Home() {
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
           {/* External System Label - Removed for cleaner look matching Product Page */}
-          <div className="text-center mb-12 opacity-0 h-0 overflow-hidden">
-            {/* Hidden to preserve layout spacing if needed, or just remove */}
-          </div>
+
 
           <FadeIn direction="up" delay={0.2}>
             <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-[2.5rem] p-10 md:p-16 overflow-hidden relative shadow-2xl border-2 border-gray-700">
@@ -174,13 +172,13 @@ export default function Home() {
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-20 items-center">
                 {[
-                  { label: "Deployments", val: "47+", color: "hover:text-primary" },
-                  { label: "Cities", val: "4", color: "hover:text-green-500" },
-                  { label: "Solar Capacity", val: "12.4 MW", color: "hover:text-yellow-600" },
-                  { label: "Uptime SLA", val: "100%", color: "hover:text-purple-600" }
+                  { label: "Deployments", val: "47+" },
+                  { label: "Cities", val: "4" },
+                  { label: "Solar Capacity", val: "12.4 MW" },
+                  { label: "Uptime SLA", val: "100%" }
                 ].map((stat) => (
                   <div key={stat.label} className="text-center group cursor-default">
-                    <div className={`text-5xl font-black text-gray-200 ${stat.color} transition-all duration-300 transform group-hover:scale-110 mb-2`}>
+                    <div className="text-5xl font-black text-gray-900 transition-all duration-300 transform group-hover:scale-110 mb-2 group-hover:text-primary">
                       {stat.val}
                     </div>
                     <div className="text-xs font-black text-gray-400 uppercase tracking-widest">

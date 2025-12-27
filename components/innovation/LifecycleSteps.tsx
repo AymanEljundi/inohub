@@ -16,9 +16,9 @@ export function LifecycleSteps() {
             label: "Phase 2: Pilot",
             description: "Approved concepts enter limited deployment. Parameters are tested in real-world conditions.",
             icon: FlaskConical,
-            color: "text-orange-500",
-            bg: "bg-orange-50",
-            border: "border-orange-200"
+            color: "text-amber-500",
+            bg: "bg-amber-50",
+            border: "border-amber-200"
         },
         {
             id: "live",

@@ -25,18 +25,18 @@ export function Footer() {
                     <div>
                         <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-300">Platform</h3>
                         <ul className="mt-4 space-y-2">
-                            <li><Link href="/services" className="text-gray-400 hover:text-white text-sm">Browse Services</Link></li>
-                            <li><Link href="/innovation" className="text-gray-400 hover:text-white text-sm">Submit Innovation</Link></li>
-                            <li><Link href="/events" className="text-gray-400 hover:text-white text-sm">Event Rentals</Link></li>
+                            <li><Link href="/solutions" className="text-gray-400 hover:text-white text-sm">Solutions</Link></li>
+                            <li><Link href="/developers" className="text-gray-400 hover:text-white text-sm">Developers</Link></li>
+                            <li><Link href="/services" className="text-gray-400 hover:text-white text-sm">Service Catalog</Link></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-300">Support</h3>
+                        <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-300">Company</h3>
                         <ul className="mt-4 space-y-2">
-                            <li><Link href="/help" className="text-gray-400 hover:text-white text-sm">Help Center</Link></li>
-                            <li><Link href="/trust" className="text-gray-400 hover:text-white text-sm">Trust & Safety</Link></li>
-                            <li><Link href="/contact" className="text-gray-400 hover:text-white text-sm">Contact Us</Link></li>
+                            <li><Link href="/about" className="text-gray-400 hover:text-white text-sm">About Us</Link></li>
+                            <li><Link href="/investors" className="text-gray-400 hover:text-white text-sm">Investors</Link></li>
+                            <li><Link href="/contact" className="text-gray-400 hover:text-white text-sm">Contact</Link></li>
                         </ul>
                     </div>
 
@@ -45,6 +45,7 @@ export function Footer() {
                         <ul className="mt-4 space-y-2">
                             <li><Link href="/privacy" className="text-gray-400 hover:text-white text-sm">Privacy Policy</Link></li>
                             <li><Link href="/terms" className="text-gray-400 hover:text-white text-sm">Terms of Service</Link></li>
+                            <li><Link href="/status" className="text-gray-400 hover:text-white text-sm">System Status</Link></li>
                         </ul>
                     </div>
                 </div>

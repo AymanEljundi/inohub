@@ -72,12 +72,13 @@ export default function AcademyPage() {
             {/* Courses Grid */}
             <div id="courses" className="py-24 bg-gray-50">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                    {/* ... (keep existing courses grid) ... */}
                     <div className="mx-auto max-w-2xl text-center mb-16">
                         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Available Programs</h2>
                         <p className="mt-4 text-lg text-gray-600">Invest in your career with our accredited certifications.</p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
                         {courses.map((course) => (
                             <div
                                 key={course.id}
@@ -107,6 +108,48 @@ export default function AcademyPage() {
                                 </div>
                             </div>
                         ))}
+                    </div>
+
+                    {/* Free Tier / Community Section */}
+                    <div className="bg-white rounded-3xl p-8 sm:p-12 border border-blue-100 shadow-xl overflow-hidden relative">
+                        <div className="absolute top-0 right-0 p-32 bg-blue-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm font-medium mb-6">
+                                    <Star className="h-4 w-4 fill-blue-700" /> Free Community Edition
+                                </div>
+                                <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">Start Learning for Free</h2>
+                                <p className="text-lg text-gray-600 mb-8">
+                                    Not ready for certification? Access 50+ hours of free tutorials, wiring diagrams, and our Discord community.
+                                </p>
+                                <div className="flex flex-wrap gap-4">
+                                    <button className="rounded-full bg-gray-900 px-6 py-3 text-sm font-semibold text-white shadow hover:bg-gray-800 transition-all">
+                                        Join Discord Community
+                                    </button>
+                                    <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 transition-all">
+                                        Watch Tutorials
+                                    </button>
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-2 gap-4">
+                                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                                    <div className="font-bold text-gray-900 text-lg mb-1">50+</div>
+                                    <div className="text-sm text-gray-500">Video Tutorials</div>
+                                </div>
+                                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                                    <div className="font-bold text-gray-900 text-lg mb-1">2.4k</div>
+                                    <div className="text-sm text-gray-500">Community Members</div>
+                                </div>
+                                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                                    <div className="font-bold text-gray-900 text-lg mb-1">Weekly</div>
+                                    <div className="text-sm text-gray-500">Live Q&A</div>
+                                </div>
+                                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                                    <div className="font-bold text-gray-900 text-lg mb-1">Docs</div>
+                                    <div className="text-sm text-gray-500">PDF Wiring Guides</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

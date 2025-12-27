@@ -2,20 +2,42 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, ChevronDown, Search } from "lucide-react";
+import { Menu, ChevronDown, Search, X } from "lucide-react";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+
+// Helper component for nav links with active state
+function NavLink({ href, children, className = "" }: { href: string; children: React.ReactNode; className?: string }) {
+    const pathname = usePathname();
+    const isActive = pathname === href || pathname.startsWith(href + "/");
+
+    return (
+        <Link
+            href={href}
+            className={`inline-flex items-center text-sm font-medium transition-colors py-5 relative ${isActive
+                    ? "text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary"
+                    : "text-gray-700 hover:text-primary"
+                } ${className}`}
+        >
+            {children}
+        </Link>
+    );
+}
 
 export function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
+    const pathname = usePathname();
+
+    // Check if current path is in a dropdown group
+    const isSolutionsActive = ["/solutions", "/services", "/home-automation", "/ev-charging"].some(p => pathname.startsWith(p));
+    const isCompanyActive = ["/about", "/investors", "/academy", "/partner"].some(p => pathname.startsWith(p));
 
     return (
         <div className="sticky top-0 z-50">
-
-
-            <nav className="border-b border-gray-200 bg-white">
+            {/* Glassmorphism Nav */}
+            <nav className="border-b border-gray-200/50 bg-white/95 backdrop-blur-md supports-[backdrop-filter]:bg-white/80">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex h-16 justify-between items-center">
                         <div className="flex items-center">
@@ -24,7 +46,6 @@ export function Navbar() {
                                 onClick={() => window.scrollTo(0, 0)}
                                 className="flex-shrink-0 flex items-center gap-2"
                             >
-                                {/* Logo - using the downloaded asset */}
                                 <Image
                                     src="/images/logo.png"
                                     alt="TechStore Innovation Hub"
@@ -43,57 +64,72 @@ export function Navbar() {
                         <div className="hidden lg:flex space-x-8">
                             {/* Solutions Dropdown */}
                             <div className="relative group">
-                                <button className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-primary transition-colors py-5 gap-1 outline-none">
+                                <Link
+                                    href="/solutions"
+                                    className={`inline-flex items-center text-sm font-medium transition-colors py-5 gap-1 outline-none relative ${isSolutionsActive
+                                            ? "text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary"
+                                            : "text-gray-700 hover:text-primary"
+                                        }`}
+                                >
                                     Solutions <ChevronDown className="h-3 w-3" />
-                                </button>
-                                <div className="absolute left-0 w-56 mt-0 bg-white border border-gray-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                                </Link>
+                                {/* Dark themed dropdown */}
+                                <div className="absolute left-0 w-56 mt-0 bg-gray-900 border border-gray-800 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
                                     <div className="p-2 space-y-1">
-                                        <Link href="/services" className="block px-4 py-3 rounded-lg hover:bg-gray-50 text-sm">
-                                            <span className="font-bold text-gray-900 block mb-0.5">Services</span>
-                                            <span className="text-xs text-gray-500">Solar, WiFi & Infrastructure</span>
+                                        <Link href="/services" className="block px-4 py-3 rounded-lg hover:bg-gray-800 text-sm">
+                                            <span className="font-bold text-white block mb-0.5">All Services</span>
+                                            <span className="text-xs text-gray-400">Catalog Dashboard</span>
                                         </Link>
-                                        <Link href="/home-automation" className="block px-4 py-3 rounded-lg hover:bg-gray-50 text-sm">
-                                            <span className="font-bold text-gray-900 block mb-0.5">Home Automation</span>
-                                            <span className="text-xs text-gray-500">Smart Living & Security</span>
+                                        <div className="h-px bg-gray-800 my-1"></div>
+                                        <Link href="/services/solar-power" className="block px-4 py-2 rounded-lg hover:bg-gray-800 text-sm font-medium text-gray-300 whitespace-nowrap">
+                                            Solar & Power
                                         </Link>
-                                        <Link href="/products-finder" className="block px-4 py-3 rounded-lg hover:bg-gray-50 text-sm">
-                                            <span className="font-bold text-gray-900 block mb-0.5">Hardware Store</span>
-                                            <span className="text-xs text-gray-500">Shop equipment & parts</span>
+                                        <Link href="/home-automation" className="block px-4 py-2 rounded-lg hover:bg-gray-800 text-sm font-medium text-gray-300 whitespace-nowrap">
+                                            Automation
                                         </Link>
-                                        <Link href="/ev-charging" className="block px-4 py-3 rounded-lg hover:bg-gray-50 text-sm">
-                                            <span className="font-bold text-gray-900 block mb-0.5">EV Network</span>
-                                            <span className="text-xs text-gray-500">Charging stations map</span>
+                                        <Link href="/ev-charging" className="block px-4 py-2 rounded-lg hover:bg-gray-800 text-sm font-medium text-gray-300 whitespace-nowrap">
+                                            EV Network
                                         </Link>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Resources Dropdown */}
+                            {/* Products */}
+                            <NavLink href="/products-finder">Products</NavLink>
+
+                            {/* Developers */}
+                            <NavLink href="/developers">Developers</NavLink>
+
+                            {/* Company Dropdown */}
                             <div className="relative group">
-                                <button className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-primary transition-colors py-5 gap-1 outline-none">
-                                    Resources <ChevronDown className="h-3 w-3" />
+                                <button className={`inline-flex items-center text-sm font-medium transition-colors py-5 gap-1 outline-none relative ${isCompanyActive
+                                        ? "text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary"
+                                        : "text-gray-700 hover:text-primary"
+                                    }`}>
+                                    Company <ChevronDown className="h-3 w-3" />
                                 </button>
-                                <div className="absolute left-0 w-56 mt-0 bg-white border border-gray-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
+                                {/* Dark themed dropdown */}
+                                <div className="absolute left-0 w-56 mt-0 bg-gray-900 border border-gray-800 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50">
                                     <div className="p-2 space-y-1">
-                                        <Link href="/academy" className="block px-4 py-3 rounded-lg hover:bg-gray-50 text-sm">
-                                            <span className="font-bold text-gray-900 block mb-0.5">Academy</span>
-                                            <span className="text-xs text-gray-500">Training & Certification</span>
+                                        <Link href="/about" className="block px-4 py-3 rounded-lg hover:bg-gray-800 text-sm">
+                                            <span className="font-bold text-white block mb-0.5">About Us</span>
+                                            <span className="text-xs text-gray-400">Mission & Team</span>
                                         </Link>
-                                        <Link href="/calculator" className="block px-4 py-3 rounded-lg hover:bg-gray-50 text-sm">
-                                            <span className="font-bold text-gray-900 block mb-0.5">ROI Calculator</span>
-                                            <span className="text-xs text-gray-500">Estimate your savings</span>
+                                        <Link href="/investors" className="block px-4 py-3 rounded-lg hover:bg-gray-800 text-sm">
+                                            <span className="font-bold text-white block mb-0.5">Investors</span>
+                                            <span className="text-xs text-gray-400">Financials & Impact</span>
                                         </Link>
-                                        <Link href="/innovation" className="block px-4 py-3 rounded-lg hover:bg-gray-50 text-sm">
-                                            <span className="font-bold text-gray-900 block mb-0.5">Submit Idea</span>
-                                            <span className="text-xs text-gray-500">Innovation program</span>
+                                        <Link href="/academy" className="block px-4 py-3 rounded-lg hover:bg-gray-800 text-sm">
+                                            <span className="font-bold text-white block mb-0.5">Academy</span>
+                                            <span className="text-xs text-gray-400">Training & Certs</span>
+                                        </Link>
+                                        <Link href="/partner" className="block px-4 py-3 rounded-lg hover:bg-gray-800 text-sm">
+                                            <span className="font-bold text-white block mb-0.5">Partners</span>
+                                            <span className="text-xs text-gray-400">Join our network</span>
                                         </Link>
                                     </div>
                                 </div>
                             </div>
-
-                            <Link href="/about" className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-primary transition-colors py-5">
-                                About & Trust
-                            </Link>
                         </div>
 
                         <div className="flex items-center gap-4">
@@ -132,7 +168,7 @@ export function Navbar() {
                                     className="text-gray-500 hover:text-gray-900"
                                     aria-label="Toggle Menu"
                                 >
-                                    <Menu className="h-6 w-6" />
+                                    {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                                 </button>
                             </div>
                         </div>
@@ -141,25 +177,36 @@ export function Navbar() {
 
                 {/* Mobile menu */}
                 {isMenuOpen && (
-                    <div className="lg:hidden border-t border-gray-100 bg-white max-h-[80vh] overflow-y-auto">
+                    <div className="lg:hidden border-t border-gray-100 bg-white/95 backdrop-blur-md max-h-[80vh] overflow-y-auto">
                         <div className="space-y-1 pt-2 pb-3 px-4">
                             <div className="py-2">
                                 <div className="font-bold text-gray-900 mb-2 px-2">Solutions</div>
                                 <div className="space-y-1 pl-4 border-l-2 border-gray-100">
-                                    <Link href="/services" className="block py-2 text-sm text-gray-600">Services</Link>
-                                    <Link href="/products-finder" className="block py-2 text-sm text-gray-600">Products</Link>
+                                    <Link href="/solutions" className="block py-2 text-sm font-semibold text-gray-800">Overview</Link>
+                                    <Link href="/services" className="block py-2 text-sm text-gray-600">Services Catalog</Link>
+                                    <Link href="/home-automation" className="block py-2 text-sm text-gray-600">Home Automation</Link>
                                     <Link href="/ev-charging" className="block py-2 text-sm text-gray-600">EV Network</Link>
                                 </div>
                             </div>
-                            <div className="py-2">
-                                <div className="font-bold text-gray-900 mb-2 px-2">Resources</div>
+
+                            <Link href="/products-finder" className="block py-3 text-base font-bold text-gray-900 border-t border-gray-100">
+                                Products
+                            </Link>
+
+                            <Link href="/developers" className="block py-3 text-base font-bold text-gray-900 border-t border-gray-100">
+                                Developers
+                            </Link>
+
+                            <div className="py-2 border-t border-gray-100">
+                                <div className="font-bold text-gray-900 mb-2 px-2">Company</div>
                                 <div className="space-y-1 pl-4 border-l-2 border-gray-100">
+                                    <Link href="/about" className="block py-2 text-sm text-gray-600">About Us</Link>
+                                    <Link href="/investors" className="block py-2 text-sm text-gray-600">Investors</Link>
                                     <Link href="/academy" className="block py-2 text-sm text-gray-600">Academy</Link>
-                                    <Link href="/calculator" className="block py-2 text-sm text-gray-600">ROI Calculator</Link>
-                                    <Link href="/innovation" className="block py-2 text-sm text-gray-600">Submit Idea</Link>
+                                    <Link href="/partner" className="block py-2 text-sm text-gray-600">Partners</Link>
                                 </div>
                             </div>
-                            <Link href="/about" className="block py-3 text-base font-bold text-gray-900 border-t border-gray-100">About & Trust</Link>
+
                             <div className="pt-4 space-y-3">
                                 <Link href="/partner" className="block w-full text-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-red-700">Partner Portal</Link>
                             </div>

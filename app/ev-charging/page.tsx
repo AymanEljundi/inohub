@@ -55,7 +55,7 @@ export default function EVChargingPage() {
                             </div>
                         </div>
                         <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                            Charge Anywhere, <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">Drive Everywhere</span>
+                            Charge Anywhere, <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">Drive Everywhere</span>
                         </h1>
                         <p className="mt-6 text-lg leading-8 text-gray-300">
                             Lebanon&apos;s fastest growing EV network. Powered by solar, available 24/7.

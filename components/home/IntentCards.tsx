@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Zap, Battery, GraduationCap, Handshake, ArrowRight } from "lucide-react";
+import { Zap, Plug, Home, GraduationCap, Handshake, ArrowRight } from "lucide-react";
 import { useConsultation } from "@/components/consultation/ConsultationContext";
 
 interface IntentCard {
@@ -27,7 +27,7 @@ const INTENT_CARDS: IntentCard[] = [
     {
         title: "Home Automation",
         description: "Smart living solutions for modern homes. Configurable packages.",
-        icon: Battery, // Using Battery as placeholder, maybe change to Home/Smart icon in future
+        icon: Home,
         href: "/home-automation",
         color: "text-red-500",
         gradient: "from-red-500/10 to-red-600/10"
@@ -35,7 +35,7 @@ const INTENT_CARDS: IntentCard[] = [
     {
         title: "Find EV Charging",
         description: "Locate charging stations across Beirut, Tripoli, Jounieh, and Dbayeh",
-        icon: Battery,
+        icon: Plug,
         href: "/ev-charging",
         color: "text-red-600",
         gradient: "from-red-500/10 to-red-900/10"

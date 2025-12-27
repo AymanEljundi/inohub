@@ -51,7 +51,7 @@ export function SolutionExpansionPanel({ serviceId, defaultSiteType = 'business'
                                     </div>
                                 )}
                                 {rec.solution.includedServiceIds.includes('energy-storage-plus') && (
-                                    <div className="flex items-center text-xs text-orange-700 bg-orange-100 px-2 py-1 rounded-lg">
+                                    <div className="flex items-center text-xs text-amber-700 bg-amber-100 px-2 py-1 rounded-lg">
                                         <Battery className="w-3 h-3 mr-1" />
                                         Backup Power
                                     </div>

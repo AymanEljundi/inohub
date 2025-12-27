@@ -19,7 +19,7 @@ export function StationCard({ station }: { station: EVStation }) {
                     />
                     <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold uppercase shadow-sm z-10">
                         {isOnline ? <span className="text-green-700">Online</span> :
-                            isBusy ? <span className="text-orange-700">Busy</span> :
+                            isBusy ? <span className="text-red-700">Busy</span> :
                                 <span className="text-gray-500">Offline</span>}
                     </div>
                 </div>

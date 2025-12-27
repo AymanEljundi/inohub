@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>http://localhost:3000/academy</loc><lastmod>2025-12-26T11:14:13.917Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/calculator</loc><lastmod>2025-12-26T11:14:13.919Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/ev-charging</loc><lastmod>2025-12-26T11:14:13.919Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/innovation</loc><lastmod>2025-12-26T11:14:13.919Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000</loc><lastmod>2025-12-26T11:14:13.919Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/partner</loc><lastmod>2025-12-26T11:14:13.919Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/products-finder</loc><lastmod>2025-12-26T11:14:13.919Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/services</loc><lastmod>2025-12-26T11:14:13.919Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/about</loc><lastmod>2025-12-27T23:53:23.959Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/academy</loc><lastmod>2025-12-27T23:53:23.964Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/calculator</loc><lastmod>2025-12-27T23:53:23.964Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/developers</loc><lastmod>2025-12-27T23:53:23.964Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/ev-charging</loc><lastmod>2025-12-27T23:53:23.964Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/home-automation</loc><lastmod>2025-12-27T23:53:23.964Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/innovation</loc><lastmod>2025-12-27T23:53:23.964Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/investors</loc><lastmod>2025-12-27T23:53:23.964Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000</loc><lastmod>2025-12-27T23:53:23.964Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/partner</loc><lastmod>2025-12-27T23:53:23.964Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/products-finder</loc><lastmod>2025-12-27T23:53:23.964Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/robots.txt</loc><lastmod>2025-12-27T23:53:23.964Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/services</loc><lastmod>2025-12-27T23:53:23.964Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/sitemap.xml</loc><lastmod>2025-12-27T23:53:23.964Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/solutions</loc><lastmod>2025-12-27T23:53:23.964Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

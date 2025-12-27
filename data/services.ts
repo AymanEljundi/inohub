@@ -37,7 +37,7 @@ export interface Service {
 
 export const services: Service[] = [
     {
-        slug: "solar-12kw",
+        slug: "solar-power",
         title: "Enterprise Solar Power Deployment",
         category: "Energy & Infrastructure",
         description: "High-efficiency hybrid solar infrastructure for commercial facilities and large-scale residential complexes. Supports grid-tie and island interaction.",

@@ -27,7 +27,7 @@ export function StickyCTABar() {
 
     return (
         <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-md border-t border-gray-200 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] transition-transform duration-500 transform translate-y-0 animate-in slide-in-from-bottom-full">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-4">
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
 
                     {/* Text */}
