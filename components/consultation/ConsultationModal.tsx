@@ -87,29 +87,29 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
                                     <label htmlFor="name" className="block text-xs font-bold text-gray-700 mb-1">Name *</label>
-                                    <input id="name" name="name" type="text" required className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm" placeholder="John Doe" />
+                                    <input id="name" name="name" type="text" required className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="John Doe" />
                                 </div>
                                 <div>
                                     <label htmlFor="company" className="block text-xs font-bold text-gray-700 mb-1">Company</label>
-                                    <input id="company" name="company" type="text" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm" placeholder="Acme Inc." />
+                                    <input id="company" name="company" type="text" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Acme Inc." />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
                                     <label htmlFor="email" className="block text-xs font-bold text-gray-700 mb-1">Email *</label>
-                                    <input id="email" name="email" type="email" required className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm" placeholder="john@example.com" />
+                                    <input id="email" name="email" type="email" required className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="john@example.com" />
                                 </div>
                                 <div>
                                     <label htmlFor="phone" className="block text-xs font-bold text-gray-700 mb-1">Phone</label>
-                                    <input id="phone" name="phone" type="tel" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm" placeholder="+961..." />
+                                    <input id="phone" name="phone" type="tel" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="+961..." />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
                                     <label htmlFor="type" className="block text-xs font-bold text-gray-700 mb-1">Project Type *</label>
-                                    <select id="type" name="type" required className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm bg-white">
+                                    <select id="type" name="type" required className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none text-sm bg-white">
                                         <option value="">Select...</option>
                                         <option value="solar">Solar Energy</option>
                                         <option value="ev">EV Charging</option>
@@ -120,7 +120,7 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
                                 </div>
                                 <div>
                                     <label htmlFor="timeline" className="block text-xs font-bold text-gray-700 mb-1">Timeline</label>
-                                    <select id="timeline" name="timeline" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm bg-white">
+                                    <select id="timeline" name="timeline" className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none text-sm bg-white">
                                         <option value="immediate">Immediately</option>
                                         <option value="1-3months">1-3 Months</option>
                                         <option value="3-6months">3-6 Months</option>
@@ -131,7 +131,7 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
 
                             <div>
                                 <label htmlFor="notes" className="block text-xs font-bold text-gray-700 mb-1">Additional Notes</label>
-                                <textarea id="notes" name="notes" rows={3} className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm resize-none" placeholder="Briefly describe your requirements..."></textarea>
+                                <textarea id="notes" name="notes" rows={3} className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none text-sm resize-none" placeholder="Briefly describe your requirements..."></textarea>
                             </div>
 
                             <p className="text-sm text-gray-500 text-center mt-4">

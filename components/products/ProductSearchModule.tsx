@@ -28,7 +28,7 @@ export function ProductSearchModule({ compact = false }: { compact?: boolean }) 
         <div className={`bg-white rounded-2xl border border-gray-100 shadow-sm ${compact ? 'p-6' : 'p-8 md:p-12'}`}>
             {!compact && (
                 <div className="text-center mb-10">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide bg-blue-50 text-blue-700 border border-blue-100 mb-4">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide bg-red-50 text-red-700 border border-red-100 mb-4">
                         <ShoppingBag className="h-3 w-3 mr-2" /> Service-Free Retail
                     </span>
                     <h2 className="text-3xl font-bold text-gray-900 mb-3">Find Products & Hardware</h2>

@@ -22,7 +22,7 @@ export default function PartnerPage() {
             <div className="bg-white py-12 border-t border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 text-center">
                     <p className="text-gray-400 text-sm">
-                        Already a partner? <a href="#" className="text-blue-600 hover:underline">Log in to your dashboard</a> to view earnings.
+                        Already a partner? <a href="#" className="text-red-600 hover:underline">Log in to your dashboard</a> to view earnings.
                     </p>
                 </div>
             </div>

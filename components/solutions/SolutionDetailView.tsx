@@ -48,7 +48,7 @@ export function SolutionBenefits({ solution }: { solution: Solution }) {
                 <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
                     <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-200">
                         <div className="flex items-center text-gray-700 font-medium">
-                            <Activity className="w-5 h-5 mr-2 text-blue-500" /> Efficiency Boost
+                            <Activity className="w-5 h-5 mr-2 text-primary" /> Efficiency Boost
                         </div>
                         <span className="text-gray-900 font-bold">{solution.sustainabilityImpact.efficiencyBoost || 'N/A'}</span>
                     </div>

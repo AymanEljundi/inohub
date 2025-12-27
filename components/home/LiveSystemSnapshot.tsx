@@ -17,14 +17,14 @@ const STATS: Stat[] = [
         label: "EV Stations Online",
         value: 47,
         suffix: "",
-        color: "text-blue-500"
+        color: "text-red-500"
     },
     {
         icon: Activity,
         label: "Cities Covered",
         value: 4,
         suffix: "",
-        color: "text-green-500"
+        color: "text-red-500"
     },
     {
         icon: TrendingUp,
@@ -35,10 +35,10 @@ const STATS: Stat[] = [
     },
     {
         icon: GraduationCap,
-        label: "Academy Sessions",
-        value: 8,
-        suffix: " this month",
-        color: "text-purple-500"
+        label: "Active Projects",
+        value: 23,
+        suffix: "",
+        color: "text-gray-500"
     }
 ];
 
@@ -160,6 +160,29 @@ export function LiveSystemSnapshot() {
                     <p className="text-gray-300 mt-2 max-w-2xl mx-auto">
                         Real-time snapshot of deployed infrastructure across Lebanon
                     </p>
+
+                    {/* Uptime Indicator */}
+                    <div className="mt-8 flex justify-center">
+                        <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-3 border border-gray-700 inline-flex flex-col items-center gap-2">
+                            <div className="flex items-center gap-2 text-xs font-mono text-green-400 mb-1">
+                                <span className="relative flex h-2 w-2">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                </span>
+                                ALL SYSTEMS OPERATIONAL • 99.9% UPTIME
+                            </div>
+                            {/* Mock 30-day visualizer */}
+                            <div className="flex gap-0.5">
+                                {[...Array(40)].map((_, i) => (
+                                    <div
+                                        key={i}
+                                        className={`w-1.5 h-6 rounded-sm ${Math.random() > 0.95 ? 'bg-yellow-500/80' : 'bg-green-500/80'} hover:scale-125 transition-transform duration-200 cursor-help`}
+                                        title={`Day ${i + 1}: Operational`}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Stats Grid */}

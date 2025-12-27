@@ -37,7 +37,7 @@ export function BenefitGrid() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {benefits.map((benefit) => (
                         <div key={benefit.title} className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                            <div className="w-12 h-12 bg-blue-50 text-blue-700 rounded-lg flex items-center justify-center mb-6">
+                            <div className="w-12 h-12 bg-red-50 text-red-700 rounded-lg flex items-center justify-center mb-6">
                                 <benefit.icon className="h-6 w-6" />
                             </div>
                             <h3 className="text-lg font-bold text-gray-900 mb-3">{benefit.title}</h3>

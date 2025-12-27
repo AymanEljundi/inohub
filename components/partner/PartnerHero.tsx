@@ -10,7 +10,7 @@ export function PartnerHero() {
 
                     <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
                         <div className="sm:text-center lg:text-left">
-                            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide bg-blue-50 text-blue-700 border border-blue-100 mb-6">
+                            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide bg-red-50 text-red-700 border border-red-100 mb-6">
                                 <ShieldCheck className="h-4 w-4 mr-2" /> Trusted by 12+ Municipalities
                             </span>
                             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl mb-6">
@@ -33,7 +33,7 @@ export function PartnerHero() {
                             </div>
 
                             <div className="mt-8">
-                                <a href="#register" className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-blue-900 hover:bg-blue-800 md:py-4 md:text-lg transition-all shadow-lg">
+                                <a href="#register" className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-primary hover:opacity-90 md:py-4 md:text-lg transition-all shadow-lg">
                                     Start Earning
                                     <ArrowRight className="ml-2 h-5 w-5" />
                                 </a>

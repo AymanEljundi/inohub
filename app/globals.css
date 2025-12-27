@@ -4,10 +4,16 @@
   --background: #ffffff;
   --foreground: #171717;
 
-  /* Brand Core */
-  --primary: #D32F2F;
+  /* Brand Core - TechStore Red & Black */
+  --primary: #c3232b;
+  /* TechStore Brand Red */
+  --primary-hover: #a91d24;
+  /* Darker Red for hover */
   --secondary: #1A1D21;
-  --accent: #2196F3;
+  /* Dark Grey */
+  --accent: #e53e3e;
+  /* Lighter Red / Accent */
+  --brand-gradient: linear-gradient(to right, #c3232b, #e53e3e, #c3232b);
 
   /* Service Status Tokens */
   --status-concept: #9E9E9E;
@@ -16,8 +22,8 @@
   /* Orange */
   --status-live: #4CAF50;
   /* Green */
-  --status-expanding: #2196F3;
-  /* Blue */
+  --status-expanding: #c3232b;
+  /* Brand Red instead of blue */
 }
 
 @theme inline {
@@ -79,6 +85,26 @@ body {
 
 .animation-delay-2000 {
   animation-delay: 2s;
+}
+
+/* Marquee Animation for TrustBar */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.33%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+/* Pause animation on hover */
+.group:hover .animate-marquee {
+  animation-play-state: paused;
 }
 
 /* Smooth scroll behavior */

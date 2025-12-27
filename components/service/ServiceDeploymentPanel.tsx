@@ -20,7 +20,7 @@ export function ServiceDeploymentPanel({ service }: { service: Service }) {
             <div className="bg-secondary px-6 py-4 border-b border-gray-800">
                 <div className="flex justify-between items-center text-xs font-semibold tracking-wide uppercase">
                     <span className="text-gray-400">Deployment Logic</span>
-                    <span className={`px-2 py-0.5 rounded text-white ${service.deploymentModel === 'Owned' ? 'bg-blue-600' : 'bg-purple-600'
+                    <span className={`px-2 py-0.5 rounded text-white ${service.deploymentModel === 'Owned' ? 'bg-primary' : 'bg-purple-600'
                         }`}>
                         {service.deploymentModel}
                     </span>

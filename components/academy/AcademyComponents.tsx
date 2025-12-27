@@ -17,7 +17,7 @@ export function AcademyCatalog() {
                                 className="object-cover group-hover:scale-105 transition-transform duration-500"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
-                            <div className="absolute top-4 left-4 bg-white/95 px-3 py-1 rounded-full text-xs font-bold text-blue-800 uppercase backdrop-blur-sm shadow-sm z-10">
+                            <div className="absolute top-4 left-4 bg-white/95 px-3 py-1 rounded-full text-xs font-bold text-primary uppercase backdrop-blur-sm shadow-sm z-10">
                                 {prog.track}
                             </div>
                         </div>

@@ -23,7 +23,7 @@ export default function AboutPage() {
                     <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
                         <div className="relative pl-16">
                             <dt className="text-base font-semibold leading-7 text-gray-900">
-                                <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600">
+                                <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
                                     <Shield className="h-6 w-6 text-white" aria-hidden="true" />
                                 </div>
                                 Trusted Security
@@ -34,7 +34,7 @@ export default function AboutPage() {
                         </div>
                         <div className="relative pl-16">
                             <dt className="text-base font-semibold leading-7 text-gray-900">
-                                <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600">
+                                <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
                                     <Users className="h-6 w-6 text-white" aria-hidden="true" />
                                 </div>
                                 Expert Team
@@ -45,7 +45,7 @@ export default function AboutPage() {
                         </div>
                         <div className="relative pl-16">
                             <dt className="text-base font-semibold leading-7 text-gray-900">
-                                <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600">
+                                <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
                                     <Award className="h-6 w-6 text-white" aria-hidden="true" />
                                 </div>
                                 Proven ROI

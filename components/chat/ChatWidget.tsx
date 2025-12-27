@@ -72,7 +72,7 @@ export function ChatWidget() {
                                 <div className={`
                                     max-w-[80%] p-3 rounded-2xl text-sm leading-relaxed
                                     ${msg.role === 'user'
-                                        ? 'bg-blue-600 text-white rounded-tr-none'
+                                        ? 'bg-primary text-white rounded-tr-none'
                                         : 'bg-white text-gray-800 border border-gray-200 rounded-tl-none shadow-sm'}
                                 `}>
                                     {msg.text}
@@ -87,7 +87,7 @@ export function ChatWidget() {
                                     <button
                                         key={opt}
                                         onClick={() => setMessages([...messages, { role: 'user', text: opt }])}
-                                        className="text-xs bg-white border border-blue-200 text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-full transition-colors"
+                                        className="text-xs bg-white border border-red-200 text-red-600 hover:bg-red-50 px-3 py-1.5 rounded-full transition-colors"
                                     >
                                         {opt}
                                     </button>
@@ -102,11 +102,11 @@ export function ChatWidget() {
                             <input
                                 type="text"
                                 placeholder="Type a message..."
-                                className="w-full pl-4 pr-12 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition-all"
+                                className="w-full pl-4 pr-12 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none text-sm transition-all"
                             />
                             <button
                                 type="submit"
-                                className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                                className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
                                 aria-label="Send Message"
                             >
                                 <Send className="h-5 w-5" />
@@ -123,14 +123,14 @@ export function ChatWidget() {
             {!isOpen && (
                 <button
                     onClick={toggleChat}
-                    className="h-16 w-16 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg shadow-blue-600/30 flex items-center justify-center transition-all hover:scale-110 pointer-events-auto group"
+                    className="h-16 w-16 bg-primary hover:opacity-90 text-white rounded-full shadow-lg shadow-red-600/30 flex items-center justify-center transition-all hover:scale-110 pointer-events-auto group"
                     aria-label="Chat with us"
                 >
                     <div className="relative">
                         <MessageSquare className="h-7 w-7 transition-transform group-hover:rotate-12" />
                         <span className="absolute -top-1 -right-1 flex h-3 w-3">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500 border-2 border-blue-600"></span>
+                            <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500 border-2 border-primary"></span>
                         </span>
                     </div>
                 </button>

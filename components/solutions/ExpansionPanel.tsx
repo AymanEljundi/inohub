@@ -28,14 +28,14 @@ export function SolutionExpansionPanel({ serviceId, defaultSiteType = 'business'
 
             <div className="grid gap-6 md:grid-cols-2">
                 {recommendations.map(rec => (
-                    <div key={rec.solution.id} className="border border-blue-100 bg-blue-50/50 rounded-xl p-6 hover:shadow-md transition-all relative overflow-hidden group">
+                    <div key={rec.solution.id} className="border border-red-100 bg-red-50/50 rounded-xl p-6 hover:shadow-md transition-all relative overflow-hidden group">
                         <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                            <Plus className="w-16 h-16 text-blue-500" />
+                            <Plus className="w-16 h-16 text-red-500" />
                         </div>
 
                         <div className="relative z-10">
                             <div className="flex items-center gap-2 mb-3">
-                                <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-100 px-2 py-1 rounded">
+                                <span className="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-100 px-2 py-1 rounded">
                                     Recommended Add-on
                                 </span>
                             </div>
@@ -58,7 +58,7 @@ export function SolutionExpansionPanel({ serviceId, defaultSiteType = 'business'
                                 )}
                             </div>
 
-                            <Link href={`/solutions/${rec.solution.id}`} className="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800">
+                            <Link href={`/solutions/${rec.solution.id}`} className="inline-flex items-center text-sm font-semibold text-primary hover:text-red-800">
                                 View Combined Solution <ArrowRight className="w-4 h-4 ml-1" />
                             </Link>
                         </div>

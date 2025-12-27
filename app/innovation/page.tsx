@@ -15,13 +15,13 @@ export default function InnovationPage() {
             <div className="bg-gray-900 text-white pt-24 pb-32 relative overflow-hidden">
                 {/* Abstract Background */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600 rounded-full blur-[120px] opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
+                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-600 rounded-full blur-[120px] opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
                     <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600 rounded-full blur-[120px] opacity-20 transform -translate-x-1/2 translate-y-1/2"></div>
                 </div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                    <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-sm font-medium mb-8 backdrop-blur-sm">
-                        <Sparkles className="h-4 w-4 mr-2 text-blue-400" />
+                    <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-red-500/30 bg-red-500/10 text-red-300 text-sm font-medium mb-8 backdrop-blur-sm">
+                        <Sparkles className="h-4 w-4 mr-2 text-red-400" />
                         R&D Division
                     </span>
                     <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
@@ -59,6 +59,6 @@ export default function InnovationPage() {
                 </div>
 
             </div>
-        </div>
+        </div >
     );
 }

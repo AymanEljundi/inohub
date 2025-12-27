@@ -19,34 +19,34 @@ const INTENT_CARDS: IntentCard[] = [
         title: "Deploy or Expand a Service",
         description: "Solar, EV charging, security systems—deployed and maintained by TechStore",
         icon: Zap,
-        href: "#",
+        href: "#services",
         action: "consultation",
-        color: "text-blue-600",
-        gradient: "from-blue-500/10 to-blue-600/10"
+        color: "text-red-600",
+        gradient: "from-red-500/10 to-red-600/10"
+    },
+    {
+        title: "Home Automation",
+        description: "Smart living solutions for modern homes. Configurable packages.",
+        icon: Battery, // Using Battery as placeholder, maybe change to Home/Smart icon in future
+        href: "/home-automation",
+        color: "text-red-500",
+        gradient: "from-red-500/10 to-red-600/10"
     },
     {
         title: "Find EV Charging",
         description: "Locate charging stations across Beirut, Tripoli, Jounieh, and Dbayeh",
         icon: Battery,
         href: "/ev-charging",
-        color: "text-green-600",
-        gradient: "from-green-500/10 to-green-600/10"
+        color: "text-red-600",
+        gradient: "from-red-500/10 to-red-900/10"
     },
     {
-        title: "Learn & Get Certified",
-        description: "Professional training programs for installers and technicians",
-        icon: GraduationCap,
-        href: "/academy",
-        color: "text-purple-600",
-        gradient: "from-purple-500/10 to-purple-600/10"
-    },
-    {
-        title: "Partner or Invest",
-        description: "Join the network as a site partner or infrastructure investor",
+        title: "Shop Hardware",
+        description: "Buy professional grade components directly from our store.",
         icon: Handshake,
-        href: "/partner",
-        color: "text-orange-600",
-        gradient: "from-orange-500/10 to-orange-600/10"
+        href: "/products-finder",
+        color: "text-gray-600",
+        gradient: "from-gray-500/10 to-gray-600/10"
     }
 ];
 
@@ -78,7 +78,7 @@ export function IntentCards() {
                                 <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${card.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-200`} />
 
                                 {/* Glow Effect */}
-                                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-[0_0_30px_rgba(0,102,255,0.2)]" />
+                                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-[0_0_30px_rgba(220,38,38,0.2)]" />
 
                                 {/* Content */}
                                 <div className="relative z-10 text-left">

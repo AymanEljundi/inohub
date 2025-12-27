@@ -14,11 +14,11 @@ export default function CalculatorPage() {
 
                     {/* Left Content */}
                     <div>
-                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
                             Interactive Tool
                         </div>
                         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-                            Calculate Your <span className="text-blue-600">Infrastructure ROI</span>
+                            Calculate Your <span className="text-primary">Infrastructure ROI</span>
                         </h1>
                         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                             See how quickly your investment in Solar or EV Charging can pay for itself. Our advanced modeling helps you estimate upfront costs, annual savings, and environmental impact in seconds.
@@ -26,14 +26,14 @@ export default function CalculatorPage() {
 
                         <div className="space-y-6">
                             <div className="flex gap-4">
-                                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">1</div>
+                                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold">1</div>
                                 <div>
                                     <h3 className="font-bold text-gray-900">Select Technology</h3>
                                     <p className="text-sm text-gray-500">Choose between Solar Energy systems or EV Charging networks.</p>
                                 </div>
                             </div>
                             <div className="flex gap-4">
-                                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">2</div>
+                                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold">2</div>
                                 <div>
                                     <h3 className="font-bold text-gray-900">Input Your Data</h3>
                                     <p className="text-sm text-gray-500">Enter simple metrics like your monthly bill or available area.</p>
@@ -55,6 +55,6 @@ export default function CalculatorPage() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }

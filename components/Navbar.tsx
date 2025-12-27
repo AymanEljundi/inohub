@@ -8,6 +8,8 @@ import { useState } from "react";
 export function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState("");
 
     return (
         <div className="sticky top-0 z-50">
@@ -50,8 +52,12 @@ export function Navbar() {
                                             <span className="font-bold text-gray-900 block mb-0.5">Services</span>
                                             <span className="text-xs text-gray-500">Solar, WiFi & Infrastructure</span>
                                         </Link>
+                                        <Link href="/home-automation" className="block px-4 py-3 rounded-lg hover:bg-gray-50 text-sm">
+                                            <span className="font-bold text-gray-900 block mb-0.5">Home Automation</span>
+                                            <span className="text-xs text-gray-500">Smart Living & Security</span>
+                                        </Link>
                                         <Link href="/products-finder" className="block px-4 py-3 rounded-lg hover:bg-gray-50 text-sm">
-                                            <span className="font-bold text-gray-900 block mb-0.5">Hardware Products</span>
+                                            <span className="font-bold text-gray-900 block mb-0.5">Hardware Store</span>
                                             <span className="text-xs text-gray-500">Shop equipment & parts</span>
                                         </Link>
                                         <Link href="/ev-charging" className="block px-4 py-3 rounded-lg hover:bg-gray-50 text-sm">
@@ -91,9 +97,32 @@ export function Navbar() {
                         </div>
 
                         <div className="flex items-center gap-4">
-                            <button className="text-gray-500 hover:text-gray-900" aria-label="Search">
-                                <Search className="h-5 w-5" />
-                            </button>
+                            <div className={`flex items-center transition-all duration-300 ${isSearchOpen ? 'w-48' : 'w-8'}`}>
+                                {isSearchOpen ? (
+                                    <form onSubmit={(e) => { e.preventDefault(); window.location.href = `/products-finder?q=${encodeURIComponent(searchQuery)}`; }} className="w-full relative">
+                                        <input
+                                            type="text"
+                                            value={searchQuery}
+                                            onChange={(e) => setSearchQuery(e.target.value)}
+                                            onBlur={() => !searchQuery && setIsSearchOpen(false)}
+                                            autoFocus
+                                            placeholder="Search..."
+                                            className="w-full bg-gray-100 text-sm border-none rounded-full py-1.5 pl-3 pr-8 focus:ring-1 focus:ring-red-500 outline-none"
+                                        />
+                                        <button type="submit" className="absolute right-2 top-1.5 p-0.5 text-gray-500 hover:text-red-600">
+                                            <Search className="h-3 w-3" />
+                                        </button>
+                                    </form>
+                                ) : (
+                                    <button
+                                        onClick={() => setIsSearchOpen(true)}
+                                        className="text-gray-500 hover:text-gray-900"
+                                        aria-label="Search"
+                                    >
+                                        <Search className="h-5 w-5" />
+                                    </button>
+                                )}
+                            </div>
                             <Link href="/partner" className="hidden lg:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary shadow-sm hover:shadow-md transition-all whitespace-nowrap">
                                 Partner Portal
                             </Link>

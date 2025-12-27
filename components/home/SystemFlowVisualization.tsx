@@ -23,8 +23,8 @@ const FLOW_STEPS: FlowStep[] = [
         icon: Wrench,
         title: "Service",
         description: "We design, source, and configure the deployment",
-        color: "text-blue-600",
-        glow: "shadow-[0_0_15px_rgba(37,99,235,0.3)]"
+        color: "text-red-600",
+        glow: "shadow-[0_0_15px_rgba(195,35,43,0.3)]"
     },
     {
         icon: Rocket,
@@ -86,7 +86,7 @@ export function SystemFlowVisualization() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Section Header */}
                 <div className="text-center mb-24">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-sm font-bold text-blue-700 uppercase tracking-wider mb-4 shadow-sm">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 border border-red-200 rounded-full text-sm font-bold text-red-700 uppercase tracking-wider mb-4 shadow-sm">
                         Platform Journey
                     </div>
                     <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
@@ -102,7 +102,7 @@ export function SystemFlowVisualization() {
                     {/* Connection Line (Desktop) - Fills as user scrolls */}
                     <div className="hidden md:block absolute top-24 left-0 right-0 h-1.5 bg-gray-100 rounded-full overflow-hidden">
                         <div
-                            className="h-full bg-gradient-to-r from-yellow-400 via-blue-500 via-green-500 to-purple-500 shadow-[0_0_10px_rgba(59,130,246,0.3)] transition-all duration-300 linear"
+                            className="h-full bg-gradient-to-r from-yellow-400 via-red-500 via-green-500 to-purple-500 shadow-[0_0_10px_rgba(195,35,43,0.3)] transition-all duration-300 linear"
                             style={{ width: `${scrollRatio * 100}%` }}
                         />
                     </div>
@@ -165,7 +165,7 @@ export function SystemFlowVisualization() {
                                     {/* Connection Arrows (Desktop) */}
                                     {index < FLOW_STEPS.length - 1 && (
                                         <div className="hidden md:flex absolute top-24 -right-10 z-20 items-center justify-center">
-                                            <ArrowRight className={`h-6 w-6 transition-colors duration-500 ${isActive ? 'text-blue-500 animate-pulse' : 'text-gray-200'}`} />
+                                            <ArrowRight className={`h-6 w-6 transition-colors duration-500 ${isActive ? 'text-red-500 animate-pulse' : 'text-gray-200'}`} />
                                         </div>
                                     )}
                                 </div>
