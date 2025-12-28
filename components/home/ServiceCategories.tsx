@@ -8,7 +8,7 @@ const categories = [
         name: "Home Automation",
         description: "Transform your home with AI-driven smart living solutions.",
         icon: Zap,
-        color: "text-red-500",
+        color: "text-red-600",
         glowColor: "group-hover:shadow-red-500/20",
         href: "/home-automation",
     },
@@ -16,7 +16,7 @@ const categories = [
         name: "Solar & Power",
         description: "Advanced renewable energy solutions and resilient power systems.",
         icon: Zap,
-        color: "text-red-500",
+        color: "text-red-600",
         glowColor: "group-hover:shadow-red-500/20",
         href: "/services",
     },
@@ -71,7 +71,7 @@ export function ServiceCategories() {
                                     {category.description}
                                 </p>
 
-                                <div className="flex items-center text-xs font-medium text-gray-400 group-hover:text-primary group-hover:gap-2 transition-all mt-auto">
+                                <div className="flex items-center text-xs font-bold text-gray-600 group-hover:text-primary group-hover:gap-2 transition-all mt-auto">
                                     View Catalogue <ArrowUpRight className="ml-1 h-3 w-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                                 </div>
                             </div>

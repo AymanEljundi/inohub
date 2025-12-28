@@ -29,7 +29,7 @@ const INTENT_CARDS: IntentCard[] = [
         description: "Smart living solutions for modern homes. Configurable packages.",
         icon: Home,
         href: "/home-automation",
-        color: "text-red-500",
+        color: "text-red-600",
         gradient: "from-red-500/10 to-red-600/10"
     },
     {

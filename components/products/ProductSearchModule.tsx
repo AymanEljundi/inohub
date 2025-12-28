@@ -32,7 +32,7 @@ export function ProductSearchModule({ compact = false }: { compact?: boolean }) 
                         <ShoppingBag className="h-3 w-3 mr-2" /> Service-Free Retail
                     </span>
                     <h2 className="text-3xl font-bold text-gray-900 mb-3">Find Products & Hardware</h2>
-                    <p className="text-gray-500 max-w-xl mx-auto">
+                    <p className="text-gray-600 max-w-xl mx-auto">
                         Looking for standalone hardware instead of managed services?
                         Search the official TechStoreLB catalog directly.
                     </p>
@@ -53,21 +53,21 @@ export function ProductSearchModule({ compact = false }: { compact?: boolean }) 
                                 <option key={cat.id} value={cat.id}>{cat.label}</option>
                             ))}
                         </select>
-                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-600">
                             <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
                         </div>
                     </div>
 
                     {/* Keyword Input */}
                     <div className="flex-1 relative">
-                        <Search className="absolute left-4 top-3.5 h-5 w-5 text-gray-400" />
+                        <Search className="absolute left-4 top-3.5 h-5 w-5 text-gray-600" />
                         <input
                             type="text"
                             value={keyword}
                             onChange={(e) => setKeyword(e.target.value)}
                             onKeyDown={handleKeyDown}
                             placeholder="e.g. Inverter, Camera, Cable..."
-                            className="w-full bg-white border border-gray-200 text-gray-900 py-3 pl-12 pr-4 rounded-lg outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary placeholder:text-gray-400"
+                            className="w-full bg-white border border-gray-200 text-gray-900 py-3 pl-12 pr-4 rounded-lg outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary placeholder:text-gray-500"
                             aria-label="Search Keyword"
                         />
                     </div>
@@ -82,7 +82,7 @@ export function ProductSearchModule({ compact = false }: { compact?: boolean }) 
                 </div>
 
                 {!compact && (
-                    <p className="text-center text-xs text-gray-400 mt-2">
+                    <p className="text-center text-xs text-gray-600 mt-2 font-medium">
                         This will redirect you to <strong>techstorelb.com</strong> in a new tab.
                     </p>
                 )}

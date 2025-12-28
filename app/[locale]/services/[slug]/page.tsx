@@ -57,6 +57,8 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                                 src={service.image}
                                 alt={service.title}
                                 fill
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                priority
                                 className="object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>

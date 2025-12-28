@@ -40,6 +40,8 @@ export default function StationDetailPage() {
                                 src="/images/ev-station-default.jpg"
                                 alt={station.name}
                                 fill
+                                sizes="(max-width: 768px) 100vw, 896px"
+                                priority
                                 className="object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent"></div>

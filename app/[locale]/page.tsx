@@ -9,8 +9,12 @@ import { SystemThread } from "@/components/home/SystemThread";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { TrustBar } from "@/components/home/TrustBar";
 import { CaseStudiesSection } from "@/components/home/CaseStudiesSection";
+import { getDictionary } from "@/lib/dictionary";
 
-export default function Home() {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const dict = await getDictionary(locale);
+
   return (
     <div className="flex flex-col relative bg-gray-50">
       {/* Persistent System Thread - spans entire page for visual continuity */}
@@ -20,7 +24,7 @@ export default function Home() {
       <SystemThread />
 
       {/* Hero Section - Now using Personalized DynamicHero */}
-      <DynamicHero />
+      <DynamicHero dict={dict} />
 
       {/* Partner Trust Bar - High Visibility */}
       <TrustBar />

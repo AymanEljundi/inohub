@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export function Footer() {
+export function Footer({ dict }: { dict: any }) {
     return (
         <footer className="bg-secondary text-white py-12">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -25,17 +25,16 @@ export function Footer() {
                     <div>
                         <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-300">Platform</h3>
                         <ul className="mt-4 space-y-2">
-                            <li><Link href="/solutions" className="text-gray-400 hover:text-white text-sm">Solutions</Link></li>
-                            <li><Link href="/developers" className="text-gray-400 hover:text-white text-sm">Developers</Link></li>
-                            <li><Link href="/services" className="text-gray-400 hover:text-white text-sm">Service Catalog</Link></li>
+                            <li><Link href="/solutions" className="text-gray-400 hover:text-white text-sm">{dict.nav.solutions}</Link></li>
+                            <li><Link href="/services" className="text-gray-400 hover:text-white text-sm">{dict.nav.all_services}</Link></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-300">Company</h3>
+                        <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-300">{dict.nav.company}</h3>
                         <ul className="mt-4 space-y-2">
-                            <li><Link href="/about" className="text-gray-400 hover:text-white text-sm">About Us</Link></li>
-                            <li><Link href="/investors" className="text-gray-400 hover:text-white text-sm">Investors</Link></li>
+                            <li><Link href="/about" className="text-gray-400 hover:text-white text-sm">{dict.nav.about_us}</Link></li>
+                            <li><Link href="/investors" className="text-gray-400 hover:text-white text-sm">{dict.nav.investors}</Link></li>
                             <li><Link href="/contact" className="text-gray-400 hover:text-white text-sm">Contact</Link></li>
                         </ul>
                     </div>
@@ -49,7 +48,7 @@ export function Footer() {
                         </ul>
                     </div>
                 </div>
-                <div className="mt-8 border-t border-gray-800 pt-8 text-center text-sm text-gray-400" suppressHydrationWarning>
+                <div className="mt-8 border-t border-gray-800 pt-8 text-center text-sm text-gray-300" suppressHydrationWarning>
                     &copy; {new Date().getFullYear()} TechStore Innovation Hub. All rights reserved.
                 </div>
             </div>

@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { ArrowRight, Zap } from "lucide-react";
 
-export function DynamicHero() {
+export function DynamicHero({ dict }: { dict: any }) {
     // Static content - sharpened messaging
-    const heroHeadline = "The Operating System for";
-    const heroSubHeadline = "Modern Infrastructure";
-    const heroDescription = "Stop managing fragmented vendors. We design, supply, and deploy turnkey solar, connectivity, and security systems on a single unified platform.";
+    const heroHeadline = dict.hero.title_1;
+    const heroSubHeadline = dict.hero.title_2;
+    const heroDescription = dict.hero.subtitle;
 
     return (
         <section className="relative isolate overflow-hidden bg-gray-900 min-h-[85vh] flex items-center justify-center">
@@ -47,15 +47,10 @@ export function DynamicHero() {
                             className="rounded-md bg-red-600 px-8 py-4 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 transition-all flex items-center gap-2"
                         >
                             <Zap className="h-5 w-5" />
-                            Start Deployment
-                            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                            {dict.hero.explore_services}
+                            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
                         </Link>
-                        <Link
-                            href="/developers"
-                            className="text-sm font-semibold leading-6 text-white group flex items-center gap-1 hover:text-red-400 transition-colors"
-                        >
-                            Build on our API <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                        </Link>
+
                     </div>
 
                     {/* Tech Metrics Preview - Refined for Dark Theme */}

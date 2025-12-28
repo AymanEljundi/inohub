@@ -17,14 +17,14 @@ const STATS: Stat[] = [
         label: "EV Stations Online",
         value: 47,
         suffix: "",
-        color: "text-red-500"
+        color: "text-red-600"
     },
     {
         icon: Activity,
         label: "Cities Covered",
         value: 4,
         suffix: "",
-        color: "text-red-500"
+        color: "text-red-600"
     },
     {
         icon: TrendingUp,
@@ -38,7 +38,7 @@ const STATS: Stat[] = [
         label: "Active Projects",
         value: 23,
         suffix: "",
-        color: "text-gray-500"
+        color: "text-gray-600"
     }
 ];
 
@@ -194,7 +194,7 @@ export function LiveSystemSnapshot() {
 
                 {/* Additional Context */}
                 <div className="mt-8 text-center">
-                    <p className="text-xs text-gray-500 uppercase tracking-wider">
+                    <p className="text-xs text-gray-600 uppercase font-bold tracking-wider">
                         Updated in real-time • Last sync: {new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
                     </p>
                 </div>

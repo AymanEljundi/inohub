@@ -14,6 +14,8 @@ export function AcademyCatalog() {
                                 src={prog.image}
                                 alt={prog.title}
                                 fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                loading="lazy"
                                 className="object-cover group-hover:scale-105 transition-transform duration-500"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>

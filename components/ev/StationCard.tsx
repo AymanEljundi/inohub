@@ -15,6 +15,8 @@ export function StationCard({ station }: { station: EVStation }) {
                         src="/images/ev-station-default.jpg"
                         alt={station.name}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        loading="lazy"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold uppercase shadow-sm z-10">

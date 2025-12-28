@@ -1,0 +1,39 @@
+{
+    "common": {
+        "loading": "Loading...",
+        "error": "Something went wrong",
+        "retry": "Retry",
+        "submit": "Submit"
+    },
+    "nav": {
+        "home": "Home",
+        "solutions": "Solutions",
+        "products": "Products",
+        "company": "Company",
+        "partner_portal": "Partner Portal",
+        "all_services": "All Services",
+        "catalog_dashboard": "Catalog Dashboard",
+        "solar_power": "Solar & Power",
+        "automation": "Automation",
+        "ev_network": "EV Network",
+        "about_us": "About Us",
+        "mission_team": "Mission & Team",
+        "investors": "Investors",
+        "financials_impact": "Financials & Impact",
+        "academy": "Academy",
+        "training_certs": "Training & Certs",
+        "partners": "Partners",
+        "join_network": "Join our network"
+    },
+    "hero": {
+        "title_1": "Deploy Enterprise",
+        "title_2": "Solar & EV Infrastructure",
+        "subtitle": "Turn your facilities into a revenue engine. We design, fund, and deploy advanced energy and security networks—so you can focus on innovation.",
+        "explore_services": "Explore Services",
+        "submit_idea": "Submit Idea",
+        "partner_deploy": "Partner & Deploy",
+        "find_products": "Find Products",
+        "ev_network_live": "EV Network Live",
+        "academy_open": "Academy Open"
+    }
+}

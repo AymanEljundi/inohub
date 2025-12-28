@@ -56,7 +56,7 @@ export function Hero() {
                         </Link>
                     </div>
 
-                    <div className="mt-8 flex gap-6 text-sm text-gray-500">
+                    <div className="mt-8 flex gap-6 text-sm text-gray-400">
                         <Link href="/partner" className="hover:text-red-500 transition-colors flex items-center">
                             Partner & Deploy
                         </Link>
