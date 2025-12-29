@@ -25,7 +25,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         },
         description:
             "Deployed a 2.4MW solar array powering public buildings and street lighting across the municipality.",
-        image: "/images/case-studies/solar-grid.jpg",
+        image: "/images/jounieh-solar.jpg",
     },
     {
         id: "dbayeh-ev-hub",
@@ -39,7 +39,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         },
         description:
             "Lebanon's largest public EV charging station with solar-powered fast chargers and real-time availability.",
-        image: "/images/case-studies/ev-hub.jpg",
+        image: "/images/dbayeh-ev.jpg",
     },
     {
         id: "factory-automation",
@@ -53,6 +53,6 @@ export const CASE_STUDIES: CaseStudy[] = [
         },
         description:
             "End-to-end automation of legacy manufacturing equipment with IoT sensors and predictive maintenance.",
-        image: "/images/case-studies/factory.jpg",
+        image: "/images/bikfaya-automation.jpg",
     },
 ];

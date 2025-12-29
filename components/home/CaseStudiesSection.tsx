@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { CASE_STUDIES, CaseStudy } from "@/lib/data/caseStudies";
 import { ArrowUpRight, Sun, Zap, Home, Wifi } from "lucide-react";
+import Image from "next/image";
 
 const CATEGORY_ICONS: Record<CaseStudy["category"], React.ElementType> = {
     solar: Sun,
@@ -23,11 +25,17 @@ function CaseStudyCard({ study }: { study: CaseStudy }) {
     return (
         <div className="group relative bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             {/* Image Placeholder */}
-            <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
+            <div className="h-48 bg-gradient-to-br from-gray-900 to-gray-800 relative overflow-hidden">
+                <Image
+                    src={study.image}
+                    alt={study.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent z-10" />
 
                 {/* Category Badge */}
-                <div className={`absolute top-4 left-4 z-20 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border ${CATEGORY_COLORS[study.category]}`}>
+                <div className={`absolute top-4 left-4 z-20 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border backdrop-blur-md ${CATEGORY_COLORS[study.category]}`}>
                     <Icon className="h-3 w-3" />
                     {study.category}
                 </div>
@@ -92,13 +100,13 @@ export function CaseStudiesSection() {
 
                 {/* CTA */}
                 <div className="mt-16 text-center">
-                    <a
+                    <Link
                         href="/about"
                         className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white font-bold rounded-lg hover:bg-black transition-colors shadow-lg"
                     >
                         See All Deployments
                         <ArrowUpRight className="h-4 w-4" />
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

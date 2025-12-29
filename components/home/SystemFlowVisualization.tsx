@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Lightbulb, Wrench, Rocket, TrendingUp, ArrowRight } from "lucide-react";
 
@@ -17,28 +18,28 @@ const FLOW_STEPS: FlowStep[] = [
         title: "Idea",
         description: "Submit your infrastructure need or innovation proposal",
         color: "text-yellow-600",
-        glow: "shadow-[0_0_15px_rgba(202,138,4,0.3)]"
+        glow: "from-yellow-400/20 to-yellow-600/20"
     },
     {
         icon: Wrench,
         title: "Service",
         description: "We design, source, and configure the deployment",
         color: "text-red-600",
-        glow: "shadow-[0_0_15px_rgba(195,35,43,0.3)]"
+        glow: "from-red-500/20 to-red-600/20"
     },
     {
         icon: Rocket,
         title: "Deployment",
         description: "Professional installation and integration on-site",
         color: "text-green-600",
-        glow: "shadow-[0_0_15px_rgba(22,163,74,0.3)]"
+        glow: "from-green-500/20 to-green-600/20"
     },
     {
         icon: TrendingUp,
         title: "Impact",
         description: "Ongoing monitoring, maintenance, and optimization",
         color: "text-purple-600",
-        glow: "shadow-[0_0_15px_rgba(147,51,234,0.3)]"
+        glow: "from-purple-500/20 to-purple-600/20"
     }
 ];
 
@@ -111,26 +112,30 @@ export function SystemFlowVisualization() {
                         {FLOW_STEPS.map((step, index) => {
                             const Icon = step.icon;
                             // Activation logic: each step triggers earlier to ensure all are visible comfortably
-                            // Previous: index / 4 -> 0, 0.25, 0.5, 0.75. New: index * 0.18 -> 0, 0.18, 0.36, 0.54
-                            const stepThreshold = (index * 0.18);
+                            const stepThreshold = (index * 0.15);
                             const isActive = scrollRatio > stepThreshold + 0.05;
-                            const isPending = scrollRatio <= stepThreshold + 0.05;
 
                             return (
                                 <div
                                     key={step.title}
-                                    className={`relative transition-all duration-700 ease-out ${isActive ? 'opacity-100 translate-y-0' : 'opacity-40 translate-y-8'
+                                    className={`relative transition-all duration-1000 ease-out ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                                         }`}
+                                    style={{ transitionDelay: `${index * 150}ms` }}
                                 >
                                     {/* Step Card */}
                                     <div className={`
-                                        bg-white rounded-2xl p-8 border-2 transition-all duration-500 relative h-full
-                                        ${isActive ? `border-gray-300 shadow-xl ${step.glow}` : 'border-gray-100 shadow-sm'}
+                                        group bg-white rounded-3xl p-8 border hover:border-transparent transition-all duration-500 relative h-full
+                                        ${isActive ? 'border-gray-200 shadow-xl' : 'border-gray-100 shadow-sm'}
+                                        hover:shadow-2xl hover:-translate-y-2
                                     `}>
+                                        {/* Hover Gradient Border Effect */}
+                                        <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${step.glow} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl`} />
+
                                         {/* Step Number */}
                                         <div className={`
-                                            absolute -top-4 -left-4 w-10 h-10 rounded-full flex items-center justify-center text-sm font-black transition-all duration-500
-                                            ${isActive ? 'bg-gray-900 text-white scale-110' : 'bg-gray-100 text-gray-400'}
+                                            absolute -top-5 -left-5 w-12 h-12 rounded-2xl flex items-center justify-center text-lg font-black transition-all duration-500 shadow-lg
+                                            ${isActive ? 'bg-gray-900 text-white rotate-6' : 'bg-gray-100 text-gray-400'}
+                                            group-hover:rotate-12 group-hover:scale-110
                                         `}>
                                             0{index + 1}
                                         </div>
@@ -138,24 +143,25 @@ export function SystemFlowVisualization() {
                                         {/* Icon Container */}
                                         <div className={`
                                             inline-flex p-5 rounded-2xl mb-6 transition-all duration-500
-                                            ${isActive ? `bg-gradient-to-br from-white to-gray-50 ${step.color} scale-110 shadow-md` : 'bg-gray-50 text-gray-300'}
+                                            ${isActive ? `bg-gradient-to-br from-gray-50 to-white shadow-inner` : 'bg-gray-50'}
+                                            group-hover:scale-110 group-hover:shadow-md
                                         `}>
-                                            <Icon className="h-10 w-10" />
+                                            <Icon className={`h-10 w-10 transition-colors duration-300 ${isActive ? step.color : 'text-gray-300'} group-hover:scale-110`} />
                                         </div>
 
                                         {/* Title */}
-                                        <h3 className={`text-2xl font-bold mb-3 transition-colors duration-500 ${isActive ? 'text-gray-900' : 'text-gray-400'}`}>
+                                        <h3 className={`text-2xl font-bold mb-3 transition-colors duration-300 ${isActive ? 'text-gray-900' : 'text-gray-400'} group-hover:text-gray-900`}>
                                             {step.title}
                                         </h3>
 
                                         {/* Description */}
-                                        <p className="text-sm text-gray-500 mt-1">
-                                            Real-time tracking of your efficiency&apos;s impact.
+                                        <p className="text-gray-500 leading-relaxed">
+                                            {step.description}
                                         </p>
 
                                         {/* Active Status Indicator */}
                                         {isActive && (
-                                            <div className="mt-4 flex items-center gap-2">
+                                            <div className="mt-6 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                                                 <span className="text-[10px] uppercase font-bold text-gray-400 tracking-widest">System Active</span>
                                             </div>
@@ -164,8 +170,8 @@ export function SystemFlowVisualization() {
 
                                     {/* Connection Arrows (Desktop) */}
                                     {index < FLOW_STEPS.length - 1 && (
-                                        <div className="hidden md:flex absolute top-24 -right-10 z-20 items-center justify-center">
-                                            <ArrowRight className={`h-6 w-6 transition-colors duration-500 ${isActive ? 'text-red-500 animate-pulse' : 'text-gray-200'}`} />
+                                        <div className="hidden md:flex absolute top-1/2 -right-6 z-20 items-center justify-center -translate-y-1/2">
+                                            <ArrowRight className={`h-6 w-6 transition-colors duration-500 ${isActive ? 'text-red-500' : 'text-gray-200'}`} />
                                         </div>
                                     )}
                                 </div>
@@ -176,13 +182,13 @@ export function SystemFlowVisualization() {
 
                 {/* Navigation Action */}
                 <div className={`text-center mt-24 transition-all duration-1000 ${scrollRatio > 0.8 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    <a
+                    <Link
                         href="/innovation"
                         className="group inline-flex items-center gap-3 px-10 py-5 bg-gray-900 hover:bg-black text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
                     >
                         Initiate New Project
                         <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                    </a>
+                    </Link>
                     <p className="mt-4 text-sm text-gray-400 font-medium">Ready to deploy your first service? Let&apos;s begin.</p>
                 </div>
             </div>
