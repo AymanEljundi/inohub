@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight, Zap, Home, BookOpen } from "lucide-react";
 
 export function DynamicHero({ dict }: { dict: any }) {
     // Static content - sharpened messaging
@@ -41,16 +41,30 @@ export function DynamicHero({ dict }: { dict: any }) {
                     </p>
 
                     {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 flex-wrap">
                         <Link
-                            href="/solutions"
-                            className="rounded-md bg-red-600 px-8 py-4 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 transition-all flex items-center gap-2"
+                            href="/home-automation"
+                            className="rounded-full bg-red-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg hover:bg-red-500 hover:scale-105 hover:shadow-red-600/30 transition-all flex items-center gap-2 min-w-[200px] justify-center"
                         >
-                            <Zap className="h-5 w-5" />
-                            {dict.hero.explore_services}
-                            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
+                            <Home className="h-5 w-5" />
+                            Smart Living
                         </Link>
 
+                        <Link
+                            href="/ev-charging"
+                            className="rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3.5 text-sm font-bold text-white shadow-lg hover:bg-white/20 hover:scale-105 transition-all flex items-center gap-2 min-w-[200px] justify-center"
+                        >
+                            <Zap className="h-5 w-5 text-yellow-400" />
+                            EV Network
+                        </Link>
+
+                        <Link
+                            href="/academy"
+                            className="rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3.5 text-sm font-bold text-white shadow-lg hover:bg-white/20 hover:scale-105 transition-all flex items-center gap-2 min-w-[200px] justify-center"
+                        >
+                            <BookOpen className="h-5 w-5 text-blue-400" />
+                            Training Academy
+                        </Link>
                     </div>
 
                     {/* Tech Metrics Preview - Refined for Dark Theme */}

@@ -35,6 +35,7 @@ export function Footer({ dict }: { dict: any }) {
                         <ul className="mt-4 space-y-2">
                             <li><Link href="/about" className="text-gray-400 hover:text-white text-sm">{dict.nav.about_us}</Link></li>
                             <li><Link href="/investors" className="text-gray-400 hover:text-white text-sm">{dict.nav.investors}</Link></li>
+                            <li><Link href="/innovation" className="text-gray-400 hover:text-white text-sm">Submit Idea</Link></li>
                             <li><Link href="/contact" className="text-gray-400 hover:text-white text-sm">Contact</Link></li>
                         </ul>
                     </div>

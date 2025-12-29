@@ -11,10 +11,8 @@ const dictionaries = {
 export type Dictionary = Awaited<ReturnType<typeof dictionaries.en>>;
 
 export const getDictionary = async (locale: string): Promise<Dictionary> => {
-    // @ts-ignore
-    if (typeof dictionaries[locale] === 'function') {
-        // @ts-ignore
-        return dictionaries[locale]();
+    if (locale in dictionaries) {
+        return dictionaries[locale as Locale]();
     }
     // Fallback to english if locale not found
     return dictionaries.en();

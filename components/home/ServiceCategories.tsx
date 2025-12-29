@@ -1,6 +1,6 @@
 "use client";
 
-import { Zap, Shield, Wifi, Server, ArrowUpRight } from "lucide-react";
+import { Zap, Shield, Wifi, Server, ArrowUpRight, BookOpen } from "lucide-react";
 import Link from "next/link";
 
 const categories = [
@@ -27,6 +27,14 @@ const categories = [
         color: "text-red-600",
         glowColor: "group-hover:shadow-red-600/20",
         href: "/ev-charging",
+    },
+    {
+        name: "Training Academy",
+        description: "Get certified in Solar, EV & Automation technologies.",
+        icon: BookOpen,
+        color: "text-blue-500",
+        glowColor: "group-hover:shadow-blue-500/20",
+        href: "/academy",
     },
     {
         name: "Review Products",

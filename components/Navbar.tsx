@@ -187,6 +187,13 @@ export function Navbar({ dict }: { dict: any }) {
                                             <span className="font-bold text-white block mb-0.5">{dict.nav.partners}</span>
                                             <span className="text-xs text-gray-400">{dict.nav.join_network}</span>
                                         </Link>
+                                        <div className="h-px bg-gray-800 my-1"></div>
+                                        <Link href="/innovation" className="block px-4 py-3 rounded-lg hover:bg-gray-800 text-sm group">
+                                            <span className="font-bold text-red-400 group-hover:text-red-300 block mb-0.5 flex items-center gap-2">
+                                                Submit Idea <span className="px-1.5 py-0.5 rounded text-[10px] bg-red-500/20 text-red-300 border border-red-500/30">NEW</span>
+                                            </span>
+                                            <span className="text-xs text-gray-400">R&D Pipeline</span>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
